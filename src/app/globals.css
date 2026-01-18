@@ -1,0 +1,283 @@
+@import "tailwindcss";
+
+/* ============================================
+   DXLR - Global Styles
+   ============================================ */
+
+:root {
+  /* Brand Colors */
+  --primary: #7C9885;
+  --primary-dark: #5A7663;
+  --secondary: #E8EDE7;
+  --accent: #A4B8A8;
+
+  /* Base Colors */
+  --background: #FFFFFF;
+  --foreground: #2D3436;
+  --text-light: #636E72;
+
+  /* System */
+  --radius: 4px;
+}
+
+@theme inline {
+  --color-background: #FFFFFF;
+  --color-foreground: #2D3436;
+  --color-primary: #7C9885;
+  --color-primary-dark: #5A7663;
+  --color-secondary: #E8EDE7;
+  --color-accent: #A4B8A8;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ============================================
+   Selection
+   ============================================ */
+
+::selection {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* ============================================
+   Scrollbar
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* ============================================
+   Focus States
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.animate-shine {
+  animation: shine 3s linear infinite;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+/* ============================================
+   Image Styles
+   ============================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================
+   Link Styles
+   ============================================ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   Form Styles
+   ============================================ */
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(124, 152, 133, 0.15);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-light);
+}
+
+/* ============================================
+   Button Reset
+   ============================================ */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ============================================
+   Container
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* ============================================
+   Aspect Ratios
+   ============================================ */
+
+.aspect-product {
+  aspect-ratio: 3 / 4;
+}
+
+.aspect-hero {
+  aspect-ratio: 16 / 9;
+}
+
+/* ============================================
+   Line Clamp
+   ============================================ */
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
