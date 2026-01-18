@@ -25,7 +25,7 @@ export default function CategorySection() {
                 </AnimatedSection>
 
                 {/* Categories Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:gap-8 gap-6">
                     {displayCategories.map((category, index) => (
                         <AnimatedSection
                             key={category.slug}

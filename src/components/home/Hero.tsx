@@ -27,7 +27,7 @@ export default function Hero() {
             {/* Split Layout */}
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 min-h-screen">
                 {/* Left Side - Content */}
-                <div className="flex items-center justify-center px-6 lg:px-16 py-32 lg:py-20 bg-white order-2 lg:order-1">
+                <div className="flex items-center justify-center px-6 lg:px-16 py-12 lg:py-20 bg-white order-2 lg:order-1 relative z-10">
                     <motion.div
                         style={{ opacity }}
                         className="max-w-xl"
@@ -48,7 +48,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-[1.1] mb-6"
+                            className="text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 leading-[1.1] mb-6"
                         >
                             {title.split(' ').map((word, i) => (
                                 <span key={i} className={i === 1 ? 'text-primary' : ''}>
@@ -62,7 +62,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="text-lg text-gray-600 mb-10 max-w-md"
+                            className="text-lg text-gray-600 mb-8 lg:mb-10 max-w-md"
                         >
                             {subtitle}
                         </motion.p>
@@ -72,24 +72,24 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
-                            className="flex flex-wrap items-center gap-4"
+                            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
                         >
-                            <Link href="/shop">
+                            <Link href="/shop" className="w-full sm:w-auto">
                                 <motion.button
                                     whileHover={{ scale: 1.03 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="px-8 py-4 bg-gray-900 text-white font-medium rounded-full flex items-center gap-3 hover:bg-gray-800 transition-colors"
+                                    className="w-full sm:w-auto px-8 py-4 bg-gray-900 text-white font-medium rounded-full flex items-center justify-center gap-3 hover:bg-gray-800 transition-colors"
                                 >
                                     {cta}
                                     <ArrowRight size={18} />
                                 </motion.button>
                             </Link>
 
-                            <Link href="/about">
+                            <Link href="/about" className="w-full sm:w-auto">
                                 <motion.button
                                     whileHover={{ scale: 1.03 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="px-8 py-4 border-2 border-gray-200 text-gray-700 font-medium rounded-full hover:border-gray-300 transition-colors"
+                                    className="w-full sm:w-auto px-8 py-4 border-2 border-gray-200 text-gray-700 font-medium rounded-full hover:border-gray-300 transition-colors text-center"
                                 >
                                     Our Story
                                 </motion.button>
@@ -101,18 +101,18 @@ export default function Hero() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.5 }}
-                            className="flex items-center gap-10 mt-16 pt-10 border-t border-gray-100"
+                            className="flex flex-wrap items-center gap-x-10 gap-y-6 mt-12 lg:mt-16 pt-10 border-t border-gray-100"
                         >
                             <div>
-                                <p className="text-3xl font-bold text-gray-900">50+</p>
+                                <p className="text-2xl lg:text-3xl font-bold text-gray-900">50+</p>
                                 <p className="text-sm text-gray-500">Countries</p>
                             </div>
                             <div>
-                                <p className="text-3xl font-bold text-gray-900">10K+</p>
+                                <p className="text-2xl lg:text-3xl font-bold text-gray-900">10K+</p>
                                 <p className="text-sm text-gray-500">Happy Customers</p>
                             </div>
                             <div>
-                                <p className="text-3xl font-bold text-gray-900">100%</p>
+                                <p className="text-2xl lg:text-3xl font-bold text-gray-900">100%</p>
                                 <p className="text-sm text-gray-500">Premium Quality</p>
                             </div>
                         </motion.div>
@@ -120,7 +120,7 @@ export default function Hero() {
                 </div>
 
                 {/* Right Side - Image */}
-                <div className="relative h-[60vh] lg:h-auto order-1 lg:order-2">
+                <div className="relative h-[45vh] lg:h-auto order-1 lg:order-2">
                     <motion.div
                         style={{ y }}
                         className="absolute inset-0"
@@ -141,7 +141,7 @@ export default function Hero() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
-                        className="absolute bottom-8 right-8 left-8 lg:left-auto lg:w-72 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl"
+                        className="absolute bottom-6 right-6 left-6 lg:left-auto lg:w-72 bg-white/95 backdrop-blur-sm rounded-2xl p-4 lg:p-6 shadow-xl"
                     >
                         <div className="flex items-center gap-4 mb-4">
                             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
